@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/webjars/layui/css/layui.css}">
+</head>
+<body>
+	<form class="layui-form" id="updateForm" th:action="@{/cart}" th:object="${zjlCart}">
+		<div class="layui-form-item">
+			<label class="layui-form-label">顾客Id</label>
+			<div class="layui-input-block">
+				<input type="hidden" name="cartId" th:value="*{cartId}">
+				<input type="text" name="userId" placeholder="请输入顾客ID"
+					   autocomplete="off" class="layui-input" lay-verify="required" maxlength="50"
+				th:value="*{userId}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">图书ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="bookId" placeholder="请输入图书Id" autocomplete="off"
+					   class="layui-input" lay-verify="number" maxlength="3" th:value="*{bookId}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">数量</label>
+			<div class="layui-input-block">
+				<input type="text" name="quantity" placeholder="请输入购买数量"
+					   autocomplete="off" class="layui-input" lay-verify="number" maxlength="100" th:value="*{quantity}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="updateSubmit">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

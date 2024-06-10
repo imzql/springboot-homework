@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/webjars/layui/css/layui.css}">
+</head>
+<body>
+	<div class="layui-form" th:object="${zjlCart}">
+		<div class="layui-form-item">
+			<label class="layui-form-label">购物车ID</label>
+			<div class="layui-input-block">
+				<div class="layui-form-mid" th:text="*{cartId}"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">顾客Id</label>
+			<div class="layui-input-block">
+				<div class="layui-form-mid" th:text="*{userId}"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">图书ID</label>
+			<div class="layui-input-block">
+				<div class="layui-form-mid" th:text="*{bookId}"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">库存数量</label>
+			<div class="layui-input-block">
+				<div class="layui-form-mid" th:text="*{quantity}"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button type="button" class="layui-btn layui-btn-primary" onclick="layer.close(layer.index)">关闭</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

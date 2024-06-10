@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/webjars/layui/css/layui.css}">
+</head>
+<body>
+	<form class="layui-form"  id="addForm"
+		method="post" th:action="@{/books}">
+		<div class="layui-form-item">
+			<label class="layui-form-label">图书名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" placeholder="请输入图书名称"
+					autocomplete="off" class="layui-input" lay-verify="required" maxlength="50">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">作者名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="author" placeholder="请输入作者名称" autocomplete="off"
+					class="layui-input" lay-verify="required" maxlength="3">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">出版年份</label>
+			<div class="layui-input-block">
+				<input type="text" name="publicationYear" placeholder="请输入出版年份"
+					autocomplete="off" class="layui-input" lay-verify="required" maxlength="100">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">出版社</label>
+			<div class="layui-input-block">
+				<input type="text" name="publisher" placeholder="请输入出版社"
+					   autocomplete="off" class="layui-input" lay-verify="required" maxlength="11">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">图书SN码</label>
+			<div class="layui-input-block">
+				<input type="text" name="isbn" placeholder="请输入图书的SN码"
+					   autocomplete="off" class="layui-input" maxlength="200">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">图书品类</label>
+			<div class="layui-input-block">
+				<input type="text" name="genre" placeholder="请输入图书的归属品类"
+					   autocomplete="off" class="layui-input" maxlength="200">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">图书库存</label>
+			<div class="layui-input-block">
+				<input type="text" name="quantity" placeholder="请输入图书的库存量"
+					   autocomplete="off" class="layui-input" maxlength="200">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">图书可用库存</label>
+			<div class="layui-input-block">
+				<input type="text" name="availableQuantity" placeholder="请输入图书的可用库存量"
+					   autocomplete="off" class="layui-input" maxlength="200">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="addSubmit">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

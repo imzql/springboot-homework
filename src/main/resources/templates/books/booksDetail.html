@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/webjars/layui/css/layui.css}">
+</head>
+<body>
+<div class="layui-form" th:object="${zjlBooks}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">图书ID</label>
+        <div class="layui-input-block">
+            <div class="layui-form-mid" th:text="*{bookId}"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图书名称</label>
+        <div class="layui-input-block">
+            <div class="layui-form-mid" th:text="*{title}"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图书作者</label>
+        <div class="layui-input-block">
+            <div class="layui-form-mid" th:text="*{author}"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出版年份</label>
+        <div class="layui-input-block">
+            <div class="layui-form-mid" th:text="*{publicationYear}"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">出版社</label>
+        <div class="layui-input-block">
+            <div class="layui-form-mid" th:text="*{publisher}"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图书SN码</label>
+        <div class="layui-input-block">
+            <div class="layui-form-mid" th:text="*{isbn}"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图书品类</label>
+        <div class="layui-form-mid" th:text="*{genre}"></div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图书库存</label>
+        <div class="layui-form-mid" th:text="*{quantity}"></div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图书可用库存量</label>
+        <div class="layui-form-mid" th:text="*{availableQuantity}"></div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="button" class="layui-btn layui-btn-primary" onclick="layer.close(layer.index)">关闭</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

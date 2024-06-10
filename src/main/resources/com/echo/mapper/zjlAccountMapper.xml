@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.echo.mapper.zjlAccountMapper">
+
+    <select id="zjlAccountPage" resultType="com.echo.pojo.zjlAccount">
+        select a.*,r.Zjl_role_name from zjl_account a
+            inner  join  zjl_role r
+                on a.Zjl_role_id = r.Zjl_role_id
+            ${ew.customSqlSegment}
+    </select>
+    <select id="zjlAccountOne" resultType="com.echo.pojo.zjlAccount">
+        select
+            a.*,
+            r.Zjl_role_name
+        from zjl_account a
+            inner  join  zjl_role r
+                on a.Zjl_role_id = r.Zjl_role_id
+        where a.Zjl_account_id = #{id};
+    </select>
+</mapper>

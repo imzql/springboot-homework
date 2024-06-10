@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.echo.mapper.zjlResourceMapper">
+
+    <select id="zjlResourceMenu" resultType="com.echo.pojo.zjlResourceVo">
+        select rr.Zjl_resource_id,re.Zjl_resource_name,re.Zjl_url
+        from zjl_resource re inner join zjl_role_resource rr
+            on  re.Zjl_resource_id = rr.Zjl_resource_id
+            ${ew.customSqlSegment};
+    </select>
+
+    <select id="updateModels" resultType="com.echo.pojo.zjlModelView">
+        select re.Zjl_resource_id id,re.Zjl_resource_name title,
+               IF(rr.Zjl_resource_id is null ,false,true) checked
+        from zjl_resource re left join zjl_role_resource rr
+            on  re.Zjl_resource_id = rr.Zjl_resource_id and rr.Zjl_role_id =#{roleId}
+            ${ew.customSqlSegment};
+    </select>
+</mapper>
